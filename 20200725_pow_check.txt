@@ -1,0 +1,19 @@
+import time
+
+print("■2の200000乗を13で割った時の余りを10000回計算")
+print()
+
+t1=time.time()
+for i in range(0,10000):
+    2**(200000) % (13)
+t2=time.time()
+print("・べき乗(**)と剰余(％)で計算：" + '{:.5f}'.format(t2-t1) + "秒")
+
+t3=time.time()
+for i in range(0,10000):
+    pow(2,200000,13)
+t4=time.time()
+
+print("・pow()で計算：" + '{:.5f}'.format(t4-t3) + "秒")
+print()
+print("べき乗(**)と剰余(％)で計算するとpowの約" + str(int((t2-t1)//(t4-t3))) + "倍かかる")
